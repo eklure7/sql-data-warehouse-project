@@ -26,6 +26,7 @@ CREATE TABLE bronze.crm_cust_info(
 );
 GO
 
+
 IF OBJECT_ID('bronze.crm_prd_info','U') IS NOT NULL
     DROP TABLE bronze.crm_prd_info;
 GO
@@ -84,5 +85,21 @@ CREATE TABLE bronze.erp_px_cat_g1v2(
     cat NVARCHAR(50),
     subcat NVARCHAR(50),
     maintenance NVARCHAR(50)
+);
+GO
+-- AS part of enhance sales feature adding new table
+
+IF OBJECT_ID('bronze.crm_notebook_sales','U') IS NOT NULL
+    DROP TABLE bronze.crm_notebook_sales;
+GO
+
+CREATE TABLE bronze.bronze.crm_notebook_sales(
+    cst_id INT,
+    cst_key NVARCHAR(50),
+    cst_firstname NVARCHAR(50),
+    cst_lastname NVARCHAR(50),
+    cst_marital_status NVARCHAR(50),
+    cst_gndr nvarchar(50),
+    cst_create_date DATE 
 );
 GO
